@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Konversi Word ke Excel</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f3f4f6;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg">
+        <h1 class="text-2xl font-bold text-center mb-4">Aplikasi Pengolah Data Biaya Perjalanan</h1>
+        <p class="text-center mb-6"> aplikasi ini fatih buat bantu ayang buat laporan biaya perjalanan. Aplikasi ini otomatis ngerubah file word ke excel</p>
+        
+        <h2 class="font-semibold text-lg mb-4">Cara Pakai:</h2>
+        <ol class="list-decimal list-inside mb-4">
+            <li>Upload file Word-nya yang udah dikasi keterangan ya❤️</li>
+            <li>Pilih proses, dan tunggu sebentar... ⏳</li>
+            <li>Simpan file hasilnya, terus buka 📂</li>
+            <li>Kalau ada peringatan, klik aja "Yes"  💕</li>
+            <li>Pilih "Enable Editing"  yaa 😘</li>
+        </ol>
+        <p class="text-sm text-red-700">Aplikasi ini belum sempurna, masih banyak kekurangan... kalau tabelnya kurang rapi, rapiin aja yaa.. semangat terus, cantik!</p>
+
+        <div class="bg-white p-6 rounded-lg shadow-md mt-6">
+            <div id="file-name" class="font-semibold text-blue-600 mb-2"></div>
+            <form method="POST" enctype="multipart/form-data" onsubmit="displayFileName()" class="flex items-center justify-center space-x-4">
+                <label for="file" class="bg-blue-600 text-white px-4 py-2 rounded-md cursor-pointer text-lg hover:bg-blue-700 transition duration-300">Pilih File Word</label>
+                <input type="file" name="file" id="file" accept=".docx" required onchange="updateFileName()" class="hidden" />
+                <input type="submit" value="Proses dan Unduh" class="bg-green-600 text-white py-2 px-6 rounded-md cursor-pointer hover:bg-blue-700 transition duration-300" />
+            </form>
+            <script>
+                function updateFileName() {
+                    const input = document.getElementById('file');
+                    const fileNameDisplay = document.getElementById('file-name');
+                    fileNameDisplay.textContent = input.files.length > 0 ? `File yang dipilih: ${input.files[0].name}` : '';
+                }
+            </script>
+        </div>
+        <footer class="text-center mt-8 w-full bg-gray-200 py-4">
+            <p class="text-gray-600">With love, calon suamimu, Fatih❤️</p>
+        </footer>
+    </div>
+
+    </html>
+</body>
